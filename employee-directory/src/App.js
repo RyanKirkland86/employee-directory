@@ -16,6 +16,9 @@ class App extends Component {
             // handleInputChange={handleInputChange}
             // results={search} 
           />
+          <Table>
+            
+          </Table>
       </Wrapper>
     )
   }
