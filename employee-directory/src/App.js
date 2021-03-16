@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import Table from "./components/Table";
-import TableRow from "./components/TableRow";
+// import TableRow from "./components/TableRow";
 import Wrapper from "./components/Wrapper";
 import API from "./utils/API";
 

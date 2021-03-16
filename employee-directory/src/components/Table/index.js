@@ -4,7 +4,7 @@ import "./style.css";
 
 function Table({ image, name, phone, email, dob }) {
     return(
-        <table class="table">
+        <table className="table display-4 align-items-center">
             <thead>
                 <tr>
                     <th scope="col">Image</th>
