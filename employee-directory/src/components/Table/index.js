@@ -5,7 +5,7 @@ import "./style.css";
 function Table(props) {
     return(
         <div className="table-responsive">
-        <table className="table align-items-center">
+        <table className="table align-items-center table-striped">
             <thead>
                 <tr>
                     <th scope="col">Image</th>
