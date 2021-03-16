@@ -7,7 +7,7 @@ function TableRow({ image, name, phone, email, dob }) {
             <tr>
                 {/* <th scope="row">{image}</th> */}
                 <td>
-                    <img alt="employees" src={image} />
+                    <img className="employee-image" alt={name} src={image} />
                 </td>
                 <td>{name}</td>
                 <td>{phone}</td>

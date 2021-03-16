@@ -2,7 +2,7 @@ import React from "react";
 import TableRow from "../TableRow";
 import "./style.css";
 
-function Table({ image, name, phone, email, dob }) {
+function Table(props) {
     return(
         <table className="table display-4 align-items-center">
             <thead>
@@ -14,13 +14,15 @@ function Table({ image, name, phone, email, dob }) {
                     <th scope="col">D.O.B.</th>
                 </tr>
             </thead>
+            {props.employees.map(employee => (
             <TableRow 
-                image={image} 
-                name={name} 
-                phone={phone} 
-                email={email} 
-                dob={dob}
+                image={employee.image} 
+                name={employee.name} 
+                phone={employee.phone} 
+                email={employee.email} 
+                dob={employee.dob}
             />
+            ))}
         </table>
   )
 }
