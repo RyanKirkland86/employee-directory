@@ -4,7 +4,8 @@ import "./style.css";
 
 function Table(props) {
     return(
-        <table className="table display-4 align-items-center">
+        <div className="table-responsive">
+        <table className="table align-items-center">
             <thead>
                 <tr>
                     <th scope="col">Image</th>
@@ -24,6 +25,7 @@ function Table(props) {
             />
             ))}
         </table>
+        </div>
   )
 }
 
