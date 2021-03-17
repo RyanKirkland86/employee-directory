@@ -10,42 +10,34 @@ function App() {
 
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
-  const [filterEmps, setFilterEmps] = useState([]);
 
-  // useEffect(() => {
-  //   if (search === "") {
-  //     setEmployees(employees)
-  //     return;
-  //   }
-  //   let employeeSearch = [];
-  //   for (let i = 0; i < employees.length; i++) {
-  //     if (employees[i].name.toLowerCase().includes(search.toLowerCase())) {
-  //       employeeSearch.push(employees[i]);
-  //     };
-  //   };
-  //   renderEmployees(employeeSearch);
-  // }, [search]);
   useEffect(() => {
     renderEmployees();
   }, []);
 
-  // useEffect(() => {
-  //   if (search) {
-  //     loadByName();
-  //   }
-  // }, [search]);
+  useEffect(() => {
+    if (search === "") {
+      setEmployees(employees)
+      return;
+    }
+    let employeeSearch = [];
+    for (let i = 0; i < employees.length; i++) {
+      if (employees[i].name.toLowerCase().includes(search.toLowerCase())) {
+        employeeSearch.push(employees[i]);
+      };
+    };
+    setEmployees(employeeSearch);
+  }, [search]);
 
-  let renderEmployees = event => {
+  const renderEmployees = () => {
     API.getEmployees()
-    .then((results) => {
-      setEmployees(results)
+    .then((employees) => {
+      setEmployees(employees);
     }).catch(err => console.log(err))
   };
 
-
-
-  let handleInputChange = event => {
-    setSearch(event.target.value.toLowerCase());
+  const handleInputChange = event => {
+    setSearch(event.target.value);
   };
 
     return (
@@ -53,7 +45,7 @@ function App() {
         <Header />
           <SearchForm
             handleInputChange={handleInputChange}
-            value={search} 
+            results={search} 
           />
           <Table
             employees={employees}

@@ -7,9 +7,9 @@ function SearchForm(props) {
             <div className="input-group col-4 w-30 p-3" id="search">
                 <input 
                     className="form-control mx-auto text-center" 
-                    value={props.searchEmployee}
-                    onChange={props.handleInputChange}
-                    type="search"
+                    value={props.search}
+                    onChange={(e) => props.handleInputChange(e)}
+                    type="text"
                     placeholder="Search for an employee">
                 </input>
             </div>
