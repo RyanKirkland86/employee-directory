@@ -6,7 +6,7 @@ This is an employee directory created using React. The user can view their entir
 
 [Deployed Link](https://ryankirkland86.github.io/employee-directory/)
 
-![Image]()
+![Image](https://github.com/RyanKirkland86/employee-directory/blob/main/assets/EmployeeDirectory-DEMO.gif)
 
 ## Technologies Used:
 
@@ -20,23 +20,40 @@ This is an employee directory created using React. The user can view their entir
 
 ## Process:
 
-![Image]()
+![Image](https://github.com/RyanKirkland86/employee-directory/blob/main/assets/NameSortDEMO.gif)
 
-
-
-```javascript
-
-```
-
-------------------------------------------------
-
-![Image]()
-
-
+In this GIF, you can see how the sort by name function works. When the user clicks on the carrot in the table header, the list of employee names is sorted alphabetically. Clicking again reverses the sort.
 
 ```javascript
-
+  useEffect(() => {
+    if (sort === "") {
+      setCarrot('\u25BA')
+    }
+    if (sort === "asc") {
+      employees.sort((name1, name2) => {
+        let emp1 = name1.name.toLowerCase();
+        let emp2 = name2.name.toLowerCase();
+        if (emp1 < emp2) {
+          setCarrot('\u25BC')
+          return -1;
+        }
+        return 0;
+      })
+    }
+    if (sort === "desc") {
+      employees.sort((name1, name2) => {
+        let emp1 = name1.name.toLowerCase();
+        let emp2 = name2.name.toLowerCase();
+        if (emp1 > emp2) {
+          setCarrot('\u25B2')
+          return -1;
+        }
+        return 0;
+      })
+    }
+  }, [sort, employees])
 ```
+
 
 ## Deployed Link:
 
