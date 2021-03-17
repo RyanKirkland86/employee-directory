@@ -7,7 +7,7 @@ function Header() {
             <div className="container">
                 <h1 className="display-4 align-items-center">Employee Directory</h1>
                     <p className="lead align-items-center">
-                        Click on carrots to filter by heading or use the search box to narrow your results.
+                        Click on the carrot to filter by name or use the search box to narrow your results.
                     </p>
             </div>
         </div>
